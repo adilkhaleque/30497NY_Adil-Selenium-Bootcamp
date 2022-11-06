@@ -1,0 +1,83 @@
+Test Case 1 - Test list of NBA teams in the Pacific division
+    1. Navigate to URL
+    2. Hover over the NBA category
+    3. Extract the list of teams under the "Pacific" sub-heading
+    4. Validate this data by comparing to the expected values
+
+Test Case 2 - Test to see the upcoming schedule for the Lakers
+    1. Navigate to URL
+    2. Hover over the NBA category
+    3. Click on "Los Angeles Lakers"
+    4. Click on "Schedule"
+    5. Validate by asserting on the "Date" sub-heading
+
+Test Case 3 - Test to see Lewis Hamilton's stats
+    1. Navigate to URL
+    2. Hover over the more button
+    3. Click on "F1"
+    4. Click on "Drivers" button
+    5. Scroll down to Lewis Hamilton
+    6. Click on Lewis Hamilton
+    7. Click on "Complete Stats"
+    8. Validate that Hamilton's 2022 race results are displayed
+
+Test Case 4 - Test to see the Lakers' 14-15 regular season stats
+    1. Navigate to URL
+    2. Hover over the NBA category
+    3. Click on "Los Angeles Lakers"
+    4. Click on "Stats"
+    5. Click on the dropdown for selecting a season and click on "2014-15 Regular Season"
+    6. Click on "Kobe Bryant"
+    7. Assert on "KOBE"
+
+Test Case 5 - Test to see FIFA World Cup fixture for November 22nd
+    1. Navigate to URL
+    2. Hover over "Soccer"
+    3. Click on "FIFA World Cup"
+    4. Click on "Fixtures & Results"
+    5. Click on Calendar picker
+    6. Click on 22nd
+    7. Validate the fixture for the 22nd
+
+Test Case 6 - Test to see Islam Makhachev's fight history
+    1. Navigate to URL
+    2. Input "Islam Makhachev" into the search field
+    3. Click on the search button
+    4. Click on the fighter's name
+    5. Scroll down
+    6. Click on "See All" link
+    7. Validate history by asserting on result "W"
+
+Test Case 7 - Test to WWE Championship history
+    1. Navigate to URL
+    2. Hover over "WWE"
+    3. Click on "WWE title history"
+    4. Scroll down
+    5. Click on "WWE championship history"
+    6. Assert on John Cena and date won 1/29/17
+
+Test Case 8 - Click on embedded video
+    1. Navigate to URL
+    2. Click on the play button of first video that pops up
+    3. Pause the video
+
+Test Case 9 - Test list of MLB teams in the American League East
+    1. Navigate to URL
+    2. Hover over the MLB category
+    3. Extract the list of teams under the "American League East" sub-heading
+    4. Validate this data by comparing to the expected values
+
+Test Case 10 - Test to see P4P rankings in the UFC
+    1. Navigate to URL
+    2. Hover over the more button
+    3. Click on "MMA"
+    4. Click on "P4P"
+    5. Scroll down
+    6. Validate to see the ranking and assert on "Alexander Volkanovski"
+
+Test Case 11 - Test to view LeBron James' stats for the season
+    1. Navigate to URL
+    2. Input "Lebron James" into the search field
+    3. Click on the search button
+    4. Click on the player's name
+    5. Validate that LeBron's stats for the current season are shown
