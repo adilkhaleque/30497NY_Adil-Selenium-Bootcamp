@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.*;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import org.testng.annotations.Optional;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
 import utils.Database;
@@ -26,10 +27,7 @@ import utils.ExcelData;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.time.Duration;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 
 public class BasePage {
@@ -265,6 +263,10 @@ public class BasePage {
         jsDriver.executeScript("arguments[0].click();", element);
     }
 
+    public void jsScrollDownUntilElementIsVisible(WebElement element) {
+        jsDriver.executeScript("arguments[0].scrollIntoView();", element);
+    }
+
     public void safeClickOnElement(WebElement element) {
         try {
             clickOnElement(element);
@@ -350,5 +352,12 @@ public class BasePage {
         return calendar.getTime();
     }
     // endregion
+
+    public boolean areEqualLists (List<WebElement> elements, List<Object> data) {
+        if (elements.equals(data)) {
+            return true;
+        }
+        return false;
+    }
 
 }
