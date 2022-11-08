@@ -34,7 +34,7 @@ public class BasePage {
 
     Map<Object, String> dbConfig = BaseConfig.databaseConfig();
     public static final String DATA_PATH = System.getProperty("user.dir") + File.separator + "src" + File.separator
-            + "test" + File.separator + "resources" + File.separator + "test_data.xlsx";
+            + "test" + File.separator + "resources" + File.separator + "test_data1.xlsx";
     public static ExcelData excel;
     public static Database db;
     public static WebDriver driver;

@@ -14,11 +14,13 @@ public class SystemBar extends BasePage {
 
     @FindBy (xpath = "//li[@class='sports menu-nhl']/a[@href]")
     public WebElement nhlButton;
+
     @FindBy (xpath = "//li[@class='sports menu-nba']/a[@href]")
     public WebElement nbaButton;
 
     @FindBy (xpath = "//li[@class='teams nba']//ul[5]//li[@class='team']//span[@class='link-text']")
     public List<WebElement> pacificTeams;
+
     @FindBy (xpath = "//li[@class='teams nba']//ul[5]//li[@class='team']//a[@data-teamid='13']")
     public WebElement lakersButton;
 
@@ -60,8 +62,12 @@ public class SystemBar extends BasePage {
         return false;
     }
 
-    public String getTextFromListOfTeams(List<WebElement> elements) {
-        return getTrimmedElementText((WebElement) elements);
+    public void selectTeam(List<WebElement> elements, int teamIndex) {
+        try {
+            getTrimmedElementText(elements.get(teamIndex));
+        } catch (IndexOutOfBoundsException e) {
+            getTrimmedElementText(elements.get(elements.size() - 1));
+        }
     }
 
     public void clickOnTeam(WebElement element) {
@@ -76,12 +82,14 @@ public class SystemBar extends BasePage {
         sendKeysToElement(searchField, searchTerm);
     }
 
-    public SearchResultsPage doSearch(String searchTerm) {
-        clickOnSearchButton();
-        inputSearchTerm(searchTerm);
-        clickOnSearchButton();
+    public void extractNBATeamNames() {
+        hoverOverElement(nbaButton);
+        selectTeam(pacificTeams, pacificTeams.size());
+    }
 
-        return new SearchResultsPage();
+    public void extractMLBTeamNames() {
+        hoverOverElement(mlbButton);
+        selectTeam(americanLeagueEastTeams, americanLeagueEastTeams.size());
     }
 
     public TeamPage navigateToLakersPage() {
@@ -91,5 +99,12 @@ public class SystemBar extends BasePage {
         return new TeamPage();
     }
 
+    public SearchResultsPage doSearch(String searchTerm) {
+        clickOnSearchButton();
+        inputSearchTerm(searchTerm);
+        clickOnSearchButton();
+
+        return new SearchResultsPage();
+    }
 
 }
