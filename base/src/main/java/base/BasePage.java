@@ -182,19 +182,6 @@ public class BasePage {
         return text;
     }
 
-    public String getTrimmedElementText(List<WebElement> elements) {
-        String text = "";
-        webDriverWait.until(ExpectedConditions.visibilityOf((WebElement) elements));
-
-        text = ((WebElement) elements).getText().trim();
-
-        if (text.equals("")) {
-            text = ((WebElement) elements).getAttribute("innerHTML").trim();
-        }
-
-        return text;
-    }
-
     public void clickOnElement(WebElement element) {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
