@@ -61,11 +61,9 @@ public class SystemBar extends BasePage {
     }
 
     public String getTextFromListOfTeams(List<WebElement> elements) {
-        for (WebElement team : elements) {
-            getTrimmedElementText(team);
-        }
-        return null;
+        return getTrimmedElementText((WebElement) elements);
     }
+
     public void clickOnTeam(WebElement element) {
         safeClickOnElement(element);
     }
