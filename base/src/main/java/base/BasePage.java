@@ -353,11 +353,4 @@ public class BasePage {
     }
     // endregion
 
-    public boolean areEqualLists (List<WebElement> elements, List<Object> data) {
-        if (elements.equals(data)) {
-            return true;
-        }
-        return false;
-    }
-
 }
