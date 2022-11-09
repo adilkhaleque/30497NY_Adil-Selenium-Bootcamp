@@ -15,6 +15,9 @@ public class SystemBar extends BasePage {
     @FindBy (xpath = "//li[@class='sports menu-nhl']/a[@href]")
     public WebElement nhlButton;
 
+    @FindBy (xpath = "//li[@class='sports menu-nhl']//li[2]/a[@href]")
+    public WebElement nhlScoresButton;
+
     @FindBy (xpath = "//li[@class='sports menu-nba']/a[@href]")
     public WebElement nbaButton;
 
@@ -33,6 +36,9 @@ public class SystemBar extends BasePage {
     @FindBy (xpath = "//li[@class='sports menu-soccer']/a[@href]")
     public WebElement soccerButton;
 
+    @FindBy (xpath = "//li[@class='teams soccer']//li[2]/a[@href and @name='&lpos=subnav+subnav__team_fifa_world_cup']")
+    public WebElement worldCupButton;
+
     @FindBy (xpath = "//li[@class='none more']/a[@href]")
     public WebElement moreButton;
 
@@ -50,6 +56,21 @@ public class SystemBar extends BasePage {
 
     @FindBy (id = "global-search-input")
     public WebElement searchField;
+
+    @FindBy (xpath = "//li[@class='user']/a[@href]")
+    public WebElement accountIcon;
+
+    @FindBy (xpath = "//div[@class='current-favorites']//a")
+    public WebElement addFavoritesButton;
+
+    @FindBy (id = "favorites-manager-iframe")
+    public WebElement myFavoritesIFrame;
+
+    @FindBy (xpath = "//ul[@class='FavMgmt__Section']//li[3]//button[@class='Button Button--sm Button--alt']")
+    public WebElement followNbaButton;
+
+    @FindBy (xpath = "//section[@class='FavMgmt__Col FavMgmt__Col--Right flex flex-column']//ul[3]//button[@class='Button Button--sm Button--alt']")
+    public WebElement unfollowNbaButton;
 
     public SystemBar() {
         PageFactory.initElements(driver, this);
@@ -114,12 +135,57 @@ public class SystemBar extends BasePage {
         return new SportsLeaguePage();
     }
 
+    public SportsLeaguePage clickOnWorldCupButton() {
+        hoverOverElement(soccerButton);
+        safeClickOnElement(worldCupButton);
+
+        return new SportsLeaguePage();
+    }
+
+    public SportsLeaguePage clickOnWweButton() {
+        clickOnOtherLeagues(wweButton);
+
+        return new SportsLeaguePage();
+    }
+
+    public SportsLeaguePage clickOnMmaButton() {
+        clickOnOtherLeagues(mmaButton);
+
+        return new SportsLeaguePage();
+    }
+
+    public void clickOnAddFavoritesButton() {
+        safeClickOnElement(addFavoritesButton);
+    }
+
+    public void clickOnNbaFollowButton() {
+        safeClickOnElement(followNbaButton);
+    }
+
+    public SportsLeaguePage clickOnNhlScoresButton() {
+        hoverOverElement(nhlButton);
+        safeClickOnElement(nhlScoresButton);
+
+        return new SportsLeaguePage();
+    }
+
     public SearchResultsPage doSearch(String searchTerm) {
         clickOnSearchButton();
         inputSearchTerm(searchTerm);
         clickOnSearchButton();
 
         return new SearchResultsPage();
+    }
+
+    public void addFavorites() {
+        hoverOverElement(accountIcon);
+        clickOnAddFavoritesButton();
+        switchToIFrame(myFavoritesIFrame);
+        clickOnNbaFollowButton();
+    }
+
+    public String getUnfollowFavoritesText() {
+        return getTrimmedElementText(unfollowNbaButton);
     }
 
 }
