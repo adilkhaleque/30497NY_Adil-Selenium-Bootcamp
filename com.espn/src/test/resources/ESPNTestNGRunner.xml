@@ -9,4 +9,16 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://espn.com"/>
 
+    <test name="smoke">
+        <classes>
+            <class name="system.team_name_text.TestTeamName">
+                <methods>
+                    <include name="testLakersText"/>
+                    <exclude name="testYankeesText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
 </suite>
