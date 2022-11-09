@@ -230,6 +230,11 @@ public class BasePage {
         driver.switchTo().frame(frame);
     }
 
+    public void switchToIFrame(WebElement frame) {
+        webDriverWait.until(ExpectedConditions.visibilityOf(frame));
+        driver.switchTo().frame(frame);
+    }
+
     public void switchToTab() {
         String parentHandle = driver.getWindowHandle();
 
