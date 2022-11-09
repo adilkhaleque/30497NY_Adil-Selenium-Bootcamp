@@ -2,13 +2,13 @@ package shared.ui;
 
 import base.BasePage;
 import espn.com_page_library.SearchResultsPage;
+import espn.com_page_library.SportsLeaguePage;
 import espn.com_page_library.TeamPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
-import java.util.ListIterator;
 
 public class SystemBar extends BasePage {
 
@@ -70,8 +70,17 @@ public class SystemBar extends BasePage {
         }
     }
 
-    public void clickOnTeam(WebElement element) {
+    public TeamPage clickOnTeam(WebElement element) {
         safeClickOnElement(element);
+
+        return new TeamPage();
+    }
+
+    public SportsLeaguePage clickOnOtherLeagues(WebElement element) {
+        hoverOverElement(moreButton);
+        safeClickOnElement(element);
+
+        return new SportsLeaguePage();
     }
 
     public void clickOnSearchButton() {
@@ -94,9 +103,15 @@ public class SystemBar extends BasePage {
 
     public TeamPage navigateToLakersPage() {
         hoverOverElement(nbaButton);
-        safeClickOnElement(lakersButton);
+        clickOnTeam(lakersButton);
 
         return new TeamPage();
+    }
+
+    public SportsLeaguePage clickOnF1() {
+        clickOnOtherLeagues(f1Button);
+
+        return new SportsLeaguePage();
     }
 
     public SearchResultsPage doSearch(String searchTerm) {
