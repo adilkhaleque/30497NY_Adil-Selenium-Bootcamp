@@ -12,9 +12,6 @@ public class SportsLeaguePage extends SharedStepsUI {
     @FindBy (xpath = "//tbody//tr[10]//a[@href]")
     public WebElement lewisHamiltonLink;
 
-    @FindBy (xpath = "//div[@id='my-players-table']//h2")
-    public WebElement lewisHamiltonRaceResultsTitle;
-
     public SportsLeaguePage() {
         PageFactory.initElements(driver, this);
     }
@@ -24,14 +21,11 @@ public class SportsLeaguePage extends SharedStepsUI {
     }
 
     public AthletePage clickOnLewisHamilton() {
+        clickOnDriversButton();
         jsScrollDownUntilElementIsVisible(lewisHamiltonLink);
         safeClickOnElement(lewisHamiltonLink);
 
         return new AthletePage();
-    }
-
-    public String getResultsTitleText() {
-        return getTrimmedElementText(lewisHamiltonRaceResultsTitle);
     }
 
 
