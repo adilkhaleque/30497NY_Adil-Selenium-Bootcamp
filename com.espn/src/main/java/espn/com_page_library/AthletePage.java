@@ -22,7 +22,7 @@ public class AthletePage extends SharedStepsUI {
     @FindBy (xpath = "//div[@class='Wrapper Card__Content']/h2")
     public WebElement fightHistoryHeading;
 
-    @FindBy (xpath = "//div[@class='PlayerHeader__Right flex align-center pr7']//h2")
+    @FindBy (xpath = "//aside[@class='StatBlock br-5 ba overflow-hidden flex-expand StatBlock--multiple bg-clr-white brdr-clr-gray-06 PlayerHeader__StatBlock']/h2")
     public WebElement lebronStatsHeading;
 
     public AthletePage() {

@@ -15,7 +15,7 @@ public class SystemBar extends BasePage {
     @FindBy (xpath = "//li[@class='sports menu-nhl']/a[@href]")
     public WebElement nhlButton;
 
-    @FindBy (xpath = "//li[@class='sports menu-nhl']//li[2]/a[@href]")
+    @FindBy (xpath = "//*[@id='global-nav']/ul/li[3]/div/ul[1]/li[2]/a")
     public WebElement nhlScoresButton;
 
     @FindBy (xpath = "//li[@class='sports menu-nba']/a[@href]")
@@ -24,19 +24,18 @@ public class SystemBar extends BasePage {
 //    @FindBy (xpath = "//li[@class='teams nba']//ul[5]//li[@class='team']//span[@class='link-text']")
 //    public List<WebElement> pacificTeams;
 
-    @FindBy (xpath = "//li[@class='teams nba']//ul[5]//li[@class='team']//a[@data-teamid='13']")
+    @FindBy (xpath = "//*[@id='global-nav']/ul/li[4]/div/ul[2]/li/div/ul[5]/li[4]/a")
     public WebElement lakersButton;
-
     @FindBy (xpath = "//li[@class='sports menu-mlb']/a[@href]")
     public WebElement mlbButton;
 
     @FindBy (xpath = "//li[@class='teams mlb']//ul[1]//li[4]/a[@href]")
     public WebElement yankeesButton;
 
-    @FindBy (xpath = "//li[@class='teams mlb']//ul[1]//li[@class='team']//span[@class='link-text']")
-    public List<WebElement> americanLeagueEastTeams;
+//    @FindBy (xpath = "//li[@class='teams mlb']//ul[1]//li[@class='team']//span[@class='link-text']")
+//    public List<WebElement> americanLeagueEastTeams;
 
-    @FindBy (xpath = "//li[@class='sports menu-soccer']/a[@href]")
+    @FindBy (xpath = "//*[@id='global-nav']/ul/li[6]/a")
     public WebElement soccerButton;
 
     @FindBy (xpath = "//li[@class='teams soccer']//li[2]/a[@href and @name='&lpos=subnav+subnav__team_fifa_world_cup']")
