@@ -36,6 +36,15 @@ public class SportsLeaguePage extends SharedStepsUI {
     @FindBy (linkText = "Alexander Volkanovski")
     public WebElement numberOneFighter;
 
+    @FindBy (xpath = "//div[@class='DatePicker']//button[@aria-label='Calendar']")
+    public WebElement calendarIcon;
+
+    @FindBy (xpath = "//div[@class='DatePicker__MonthContainer calendar--embedded']//ul[1]//li[@data-idx='6']")
+    public WebElement specificDayForNhlScores;
+
+    @FindBy (xpath = "//header[@aria-label='Saturday, November 5, 2022']//h3")
+    public WebElement nhlScoresDateHeading;
+
     public SportsLeaguePage() {
         PageFactory.initElements(driver, this);
     }
@@ -73,6 +82,18 @@ public class SportsLeaguePage extends SharedStepsUI {
         safeClickOnElement(p4pTab);
     }
 
+    public void clickOnCalendar() {
+        safeClickOnElement(calendarIcon);
+    }
+
+    public void clickOnDayForNhlScores() {
+        safeClickOnElement(specificDayForNhlScores);
+    }
+
+    public String getNhlScoresDateHeadingText() {
+        return getTrimmedElementText(nhlScoresDateHeading);
+    }
+
     public String getNumberOneFighterText() {
         jsScrollDownUntilElementIsVisible(numberOneFighter);
         return getTrimmedElementText(numberOneFighter);
@@ -86,9 +107,9 @@ public class SportsLeaguePage extends SharedStepsUI {
         return new AthletePage();
     }
 
-    public void getNumberOneP4p() {
-        clickP4pTab();
-        getNumberOneFighterText();
+    public void getNhlScores() {
+        clickOnCalendar();
+        clickOnDayForNhlScores();
     }
 
 }

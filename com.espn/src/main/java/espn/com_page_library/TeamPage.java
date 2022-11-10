@@ -25,15 +25,6 @@ public class TeamPage extends SharedStepsUI {
     @FindBy (xpath = "//tbody[@class='Table__TBODY']//a[@href='https://www.espn.com/nba/player/_/id/110/kobe-bryant']")
     public WebElement kobeBryantLink;
 
-    @FindBy (xpath = "//div[@class='DatePicker']//button[@aria-label='Calendar']")
-    public WebElement calendarIcon;
-
-    @FindBy (xpath = "//div[@class='DatePicker__MonthContainer calendar--embedded']//ul[1]//li[@data-idx='6']")
-    public WebElement specificDayForNhlScores;
-
-    @FindBy (xpath = "//header[@aria-label='Saturday, November 5, 2022']//h3")
-    public WebElement nhlScoresDateHeading;
-
     public TeamPage() {
         PageFactory.initElements(driver, this);
     }
@@ -60,24 +51,6 @@ public class TeamPage extends SharedStepsUI {
         safeClickOnElement(kobeBryantLink);
 
         return new AthletePage();
-    }
-
-    public void clickOnCalendar() {
-        safeClickOnElement(calendarIcon);
-    }
-
-    public void clickOnDayForNhlScores() {
-        safeClickOnElement(specificDayForNhlScores);
-    }
-
-    public String getNhlScoresDateHeadingText() {
-        return getTrimmedElementText(nhlScoresDateHeading);
-    }
-
-    public void getNhlScores() {
-        clickOnCalendar();
-        clickOnDayForNhlScores();
-        getNhlScoresDateHeadingText();
     }
 
 }

@@ -17,7 +17,8 @@
 <!--            <class name="system.search.TestSearch"/>-->
 <!--            <class name="system.mma_rankings.TestViewRankings"/>-->
 <!--            <class name="system.wwe_history.TestViewWweChampionshipHistory"/>-->
-            <class name="system.add_favorites.TestAddFavorites"/>
+<!--            <class name="system.add_favorites.TestAddFavorites"/>-->
+            <class name="system.scores.TestScores"/>
         </classes>
     </test>
 

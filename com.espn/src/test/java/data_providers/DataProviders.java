@@ -62,6 +62,12 @@ public class DataProviders extends BasePage {
         public Object[][] getUnfollowText() {
         return excel.readStringArrays("UnfollowButtonText");
     }
+
+    @DataProvider (name = "testNhlScores")
+        public Object[][] getDateForNhlScores() {
+        return excel.readStringArrays("NHLScoresText");
+    }
+
 }
 
 
