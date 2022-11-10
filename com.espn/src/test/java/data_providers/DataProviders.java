@@ -36,4 +36,17 @@ public class DataProviders extends BasePage {
     public Object[][] getWorldCupFixture() {
         return excel.readStringArrays("WorldCupDate");
     }
+
+
+    @DataProvider(name = "testFightHistory")
+    public Object[][] getFightHistory() {
+        return excel.readStringArrays("IslamMakhachev");
+    }
+
+    @DataProvider(name = "testLeBronStats")
+    public Object[][] getLebronStats() {
+        return excel.readStringArrays("LebronJamesStats");
+    }
 }
+
+

@@ -22,6 +22,9 @@ public class AthletePage extends SharedStepsUI {
     @FindBy (xpath = "//div[@class='Wrapper Card__Content']/h2")
     public WebElement fightHistoryHeading;
 
+    @FindBy (xpath = "//div[@class='PlayerHeader__Right flex align-center pr7']//h2")
+    public WebElement lebronStatsHeading;
+
     public AthletePage() {
         PageFactory.initElements(driver, this);
     }
@@ -40,6 +43,10 @@ public class AthletePage extends SharedStepsUI {
     }
 
     public String getFightHistoryHeadingText() {
-        return getTrimmedElementText(fightHistoryTab);
+        return getTrimmedElementText(fightHistoryHeading);
+    }
+
+    public String getLebronStatsText() {
+        return getTrimmedElementText(lebronStatsHeading);
     }
 }

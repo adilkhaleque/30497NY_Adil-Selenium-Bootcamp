@@ -60,6 +60,9 @@ public class SystemBar extends BasePage {
     @FindBy (id = "global-search-input")
     public WebElement searchField;
 
+    @FindBy (className = "btn-search")
+    public WebElement secondSearchButton;
+
     @FindBy (xpath = "//li[@class='user']/a[@href]")
     public WebElement accountIcon;
 
@@ -113,6 +116,10 @@ public class SystemBar extends BasePage {
 
     public void inputSearchTerm(String searchTerm) {
         sendKeysToElement(searchField, searchTerm);
+    }
+
+    public void clickOnSecondSearchButton() {
+        safeClickOnElement(secondSearchButton);
     }
 
 //    public void extractNBATeamNames() {
@@ -183,7 +190,7 @@ public class SystemBar extends BasePage {
     public SearchResultsPage doSearch(String searchTerm) {
         clickOnSearchButton();
         inputSearchTerm(searchTerm);
-        clickOnSearchButton();
+        clickOnSecondSearchButton();
 
         return new SearchResultsPage();
     }
