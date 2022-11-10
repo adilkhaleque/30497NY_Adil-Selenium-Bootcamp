@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import shared.SharedStepsUI;
 
 public class SportsLeaguePage extends SharedStepsUI {
-    @FindBy (xpath = "//ul[@class='first-group']//li[@class='sub']/a[@href and @name='&lpos=subnav+subnav_f1_drivers']")
+    @FindBy (xpath = "//*[@id='global-nav-secondary']/div/ul/li[8]/a")
     public WebElement f1DriverButton;
 
     @FindBy (xpath = "//tbody//tr[10]//a[@href]")

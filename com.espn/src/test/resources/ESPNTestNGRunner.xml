@@ -11,11 +11,10 @@
 
     <test name="smoke">
         <classes>
-            <class name="system.team_name_text.TestTeamName">
-                <methods>
-                    <include name="testLakersText"/>
-                    <exclude name="testYankeesText"/>
-                </methods>
+<!--            <class name="system.team_name_text.TestTeamName"/>-->
+<!--            <class name="system.schedule.TestSchedule"/>-->
+            <class name="system.stats.TestStats">
+
             </class>
         </classes>
     </test>

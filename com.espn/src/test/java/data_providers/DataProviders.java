@@ -16,4 +16,14 @@ public class DataProviders extends BasePage {
     public Object[][] getYankeesName() throws IOException {
         return excel.readStringArrays("YankeesNameText");
     }
+
+    @DataProvider(name = "testLakersSchedule")
+    public Object[][] getLakersSchedule() {
+        return excel.readStringArrays("LakersScheduleTitle");
+    }
+
+    @DataProvider(name = "testLewisStats")
+    public Object[][] getLewisStats() {
+        return excel.readStringArrays("LHRaceResults");
+    }
 }
