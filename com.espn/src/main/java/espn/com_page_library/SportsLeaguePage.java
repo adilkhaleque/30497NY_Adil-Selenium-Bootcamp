@@ -30,7 +30,7 @@ public class SportsLeaguePage extends SharedStepsUI {
     @FindBy (xpath = "//aside[@class='inline inline-table']//tr[1]//td[1]//a[@href]")
     public WebElement brockLesnarLink;
 
-    @FindBy (xpath = "//ul[@class='first-group']//li[5]/a[@href]")
+    @FindBy (xpath = "//*[@id='global-nav-secondary']/div/ul/li[5]/a")
     public WebElement p4pTab;
 
     @FindBy (linkText = "Alexander Volkanovski")

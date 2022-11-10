@@ -47,6 +47,11 @@ public class DataProviders extends BasePage {
     public Object[][] getLebronStats() {
         return excel.readStringArrays("LebronJamesStats");
     }
+
+    @DataProvider(name = "testP4pRankings")
+        public Object[][] getMmaRankings() {
+            return excel.readStringArrays("MMAP4P#1");
+        }
 }
 
 

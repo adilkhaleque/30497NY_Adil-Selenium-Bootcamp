@@ -14,7 +14,8 @@
 <!--            <class name="system.team_name_text.TestTeamName"/>-->
 <!--            <class name="system.schedule.TestSchedule"/>-->
 <!--            <class name="system.stats.TestStats"/>-->
-            <class name="system.search.TestSearch"/>
+<!--            <class name="system.search.TestSearch"/>-->
+            <class name="system.mma_rankings.TestViewRankings"/>
         </classes>
     </test>
 
