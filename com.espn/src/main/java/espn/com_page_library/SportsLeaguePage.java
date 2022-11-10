@@ -12,11 +12,11 @@ public class SportsLeaguePage extends SharedStepsUI {
     @FindBy (xpath = "//tbody//tr[10]//a[@href]")
     public WebElement lewisHamiltonLink;
 
-    @FindBy (xpath = "//li[@class='sub']/a[@href and @name='&lpos=subnav+subnav_soccer_fixtures_&_results']")
+    @FindBy (xpath = "//*[@id='global-nav-secondary']/div/ul/li[5]/a")
     public WebElement fixturesButton;
 
     @FindBy (xpath = "//div[@data-id='20221122']/a")
-    public WebElement specificDate;
+    public WebElement specificWorldCupDate;
 
     @FindBy (xpath = "//div[@id='sched-container']//span[@class='table-container']/h2")
     public WebElement dateHeading;
@@ -48,11 +48,11 @@ public class SportsLeaguePage extends SharedStepsUI {
         safeClickOnElement(fixturesButton);
     }
 
-    public void clickOnDate() {
-        safeClickOnElement(specificDate);
+    public void clickOnWorldCupDate() {
+        safeClickOnElement(specificWorldCupDate);
     }
 
-    public String getDateHeadingText() {
+    public String getWorldCupDateHeadingText() {
         return getTrimmedElementText(dateHeading);
     }
 
