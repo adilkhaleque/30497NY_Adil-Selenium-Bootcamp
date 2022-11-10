@@ -57,6 +57,11 @@ public class DataProviders extends BasePage {
         public Object[][] getWweChampionshipHistory() {
         return excel.readStringArrays("BrockLesnarWWETitleHistory");
     }
+
+    @DataProvider(name = "testAddFavorites")
+        public Object[][] getUnfollowText() {
+        return excel.readStringArrays("UnfollowButtonText");
+    }
 }
 
 
