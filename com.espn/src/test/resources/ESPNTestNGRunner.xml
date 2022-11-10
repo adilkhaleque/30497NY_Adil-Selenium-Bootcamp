@@ -13,9 +13,7 @@
         <classes>
 <!--            <class name="system.team_name_text.TestTeamName"/>-->
 <!--            <class name="system.schedule.TestSchedule"/>-->
-            <class name="system.stats.TestStats">
-
-            </class>
+<!--            <class name="system.stats.TestStats"/>-->
         </classes>
     </test>
 

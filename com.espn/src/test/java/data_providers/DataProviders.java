@@ -26,4 +26,9 @@ public class DataProviders extends BasePage {
     public Object[][] getLewisStats() {
         return excel.readStringArrays("LHRaceResults");
     }
+
+    @DataProvider(name = "testLakersStats")
+    public Object[][] getLakersStats() {
+        return excel.readStringArrays("LakersSeasonValue");
+    }
 }

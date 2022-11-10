@@ -19,14 +19,11 @@ public class TeamPage extends SharedStepsUI {
     @FindBy (xpath = "//div[@class='stats-header']//select[@class='dropdown__select']")
     public WebElement seasonDropdown;
 
-    @FindBy (xpath = "//div[@class='stats-header']//select[@class='dropdown__select']//option[11]")
+    @FindBy (xpath = "//*[@id='fittPageContainer']/div[2]/div[5]/div/div/section/div/div[2]/div[1]/div/select[1]")
     public WebElement specificSeason;
 
     @FindBy (xpath = "//tbody[@class='Table__TBODY']//a[@href='https://www.espn.com/nba/player/_/id/110/kobe-bryant']")
     public WebElement kobeBryantLink;
-
-    @FindBy (xpath = "//h1[@class='PlayerHeader__Name flex flex-column ttu fw-bold pr4 h2']/span[1]")
-    public WebElement kobeBryantName;
 
     @FindBy (xpath = "//div[@class='DatePicker']//button[@aria-label='Calendar']")
     public WebElement calendarIcon;
@@ -63,10 +60,6 @@ public class TeamPage extends SharedStepsUI {
         safeClickOnElement(kobeBryantLink);
 
         return new AthletePage();
-    }
-
-    public String getKobeText() {
-        return getTrimmedElementText(kobeBryantName);
     }
 
     public void clickOnCalendar() {

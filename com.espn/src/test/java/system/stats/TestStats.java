@@ -4,6 +4,7 @@ import base.BasePage;
 import espn.com_page_library.AthletePage;
 import espn.com_page_library.HomePage;
 import espn.com_page_library.SportsLeaguePage;
+import espn.com_page_library.TeamPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,4 +26,31 @@ public class TestStats extends BasePage {
 
         Assert.assertEquals(athletePage.getResultsTitleText(), expected);
     }
+
+    @Test(dataProviderClass = data_providers.DataProviders.class, dataProvider = "testLakersStats")
+    public void testViewLakersStats(String expectedValue, String expectedName) {
+        HomePage homePage = new HomePage();
+
+        homePage.systemBar.navigateToLakersPage();
+
+        TeamPage teamPage = new TeamPage();
+
+        teamPage.clickOnLakersStatsButton();
+
+        teamPage.clickOnSeasonDropdown();
+
+        teamPage.selectSeason(expectedValue);
+
+        AthletePage athletePage = teamPage.clickOnKobeBryantLink();
+
+        Assert.assertEquals(athletePage.getKobeText(),expectedName);
+
+
+    }
+
 }
+
+
+
+
+
