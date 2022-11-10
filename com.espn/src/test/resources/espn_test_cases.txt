@@ -52,7 +52,7 @@ Test Case 7 - Test to WWE Championship history
     3. Click on "WWE title history"
     4. Scroll down
     5. Click on "WWE championship history"
-    6. Assert on John Cena and date won 1/29/17
+    6. Assert on Brock Lesnar
 
 Test Case 8 - Test list of MLB teams in the American League East
     1. Navigate to URL

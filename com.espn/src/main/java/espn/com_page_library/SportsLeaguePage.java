@@ -24,7 +24,7 @@ public class SportsLeaguePage extends SharedStepsUI {
     @FindBy (xpath = "//ul[@class='first-group']//li[6]/a[@href]")
     public WebElement wweTitleHistoryTab;
 
-    @FindBy (xpath = "//h3[2]/a[@href]")
+    @FindBy (xpath = "//*[@id='article-feed']/article[1]/div/div[2]/h3[2]/a")
     public WebElement wweTitleHistoryArticleLink;
 
     @FindBy (xpath = "//aside[@class='inline inline-table']//tr[1]//td[1]//a[@href]")

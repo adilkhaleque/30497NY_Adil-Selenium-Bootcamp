@@ -42,7 +42,7 @@ public class SystemBar extends BasePage {
     @FindBy (xpath = "//li[@class='teams soccer']//li[2]/a[@href and @name='&lpos=subnav+subnav__team_fifa_world_cup']")
     public WebElement worldCupButton;
 
-    @FindBy (xpath = "//li[@class='none more']/a[@href]")
+    @FindBy (xpath = "//*[@id='global-nav']/ul/li[7]/a")
     public WebElement moreButton;
 
     @FindBy (xpath = "//li[@class='sports menu-mma']/a[@href]")
