@@ -9,4 +9,10 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://www.apartments.com"/>
 
+    <test name="smoke">
+        <classes>
+            <class name="system.searching.TestSearching"/>
+        </classes>
+    </test>
+
 </suite>

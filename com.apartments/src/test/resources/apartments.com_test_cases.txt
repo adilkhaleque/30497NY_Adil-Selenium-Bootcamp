@@ -1,0 +1,15 @@
+Test Case 1 - Test simple search functionality
+    1. Navigate to URL
+    2. Input location in search box
+    3. Click on search button
+    4. Validate search
+
+Test Case 2 - Customized apartment search
+    1. Navigate to URL
+    2. Input Queens, NY in search box
+    3. Click on search button
+    4. Select values for filters to further narrow down search
+    5. Validate by viewing options
+
+
+
