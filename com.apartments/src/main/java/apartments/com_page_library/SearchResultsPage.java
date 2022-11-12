@@ -97,5 +97,51 @@ public class SearchResultsPage extends BasePage {
         return getTrimmedElementText(priceDropdown);
     }
 
+    public void clickOnSelectors(WebElement element) {
+        safeClickOnElement(element);
+    }
+
+    public void clickOnSelectorOptions(WebElement element) {
+        safeClickOnElement(element);
+    }
+
+    public void navigateToDate(WebElement element) {
+        safeClickOnElement(element);
+    }
+
+    public void clickOnDoneButton() {
+        safeClickOnElement(doneButton);
+    }
+
+    public void clickOnSaveButton() {
+        safeClickOnElement(saveButton);
+    }
+
+    public String getPropertyTitleText() {
+        return getTrimmedElementText(secondPropertyTitle);
+    }
+
+    public void clickToAddFavorites(WebElement element) {
+        safeClickOnElement(element);
+    }
+
+    public void doNarrowSearch() {
+        clickOnSelectors(priceDropdown);
+        clickOnSelectorOptions(noMinPriceOption);
+        clickOnSelectorOptions(maxPriceOption);
+        clickOnSelectors(typeDropdown);
+        clickOnSelectorOptions(typeOptionApartments);
+        clickOnSelectors(lifestyleDropdown);
+        clickOnSelectorOptions(lifestyleOptionStudent);
+        clickOnSelectors(moveInDateDropdown);
+        navigateToDate(nextMonthButton);
+        navigateToDate(nextMonthButton);
+        clickOnSelectorOptions(moveInDateSelection);
+        clickOnSelectors(moreDropdown);
+        clickOnSelectorOptions(anyBathsOption);
+        jsScrollDownUntilElementIsVisible(cheapAffordability);
+        clickOnSelectorOptions(cheapAffordability);
+        clickOnDoneButton();
+    }
 
 }
