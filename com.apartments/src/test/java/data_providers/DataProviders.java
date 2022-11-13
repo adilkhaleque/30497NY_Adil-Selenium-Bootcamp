@@ -14,4 +14,14 @@ public class DataProviders extends BasePage {
     public Object[][] getSecondSearchTerm() {
         return excel.readStringArrays("DetailedSearch");
     }
+
+    @DataProvider(name = "testAddFavoritesDP")
+    public Object[][] getFavorites() {
+        return excel.readStringArrays("NumOfFavorites");
+    }
+
+    @DataProvider(name = "testRemoveFavoritesDP")
+    public Object[][] getOneFavorite() {
+        return excel.readStringArrays("OneFavorite");
+    }
 }

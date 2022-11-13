@@ -11,7 +11,8 @@
 
     <test name="smoke">
         <classes>
-            <class name="system.searching.TestSearching"/>
+<!--            <class name="system.searching.TestSearching"/>-->
+            <class name="system.add_favorites.TestFavorites"/>
         </classes>
     </test>
 

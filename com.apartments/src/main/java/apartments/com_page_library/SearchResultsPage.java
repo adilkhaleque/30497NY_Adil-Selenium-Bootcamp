@@ -5,19 +5,27 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class SearchResultsPage extends BasePage {
 
     @FindBy(id = "rentRangeLink")
     public WebElement priceDropdown;
 
+    @FindBy(xpath = "//div[@class='dropdownContent mortar-wrapper']//ul[@class='minRentOptions js-minRentOptions active']//li")
+    public List<WebElement> priceOptions;
+
     @FindBy(xpath = "//div[@class='dropdownContent mortar-wrapper']//ul[@class='minRentOptions js-minRentOptions active']//li[1]")
     public WebElement noMinPriceOption;
 
-    @FindBy(xpath = "//ul[@id='maxRentOptions']/li[2]")
+    @FindBy(xpath = "//ul[@id='maxRentOptions']/li[6]")
     public WebElement maxPriceOption;
 
     @FindBy(id = "bedRangeLink")
     public WebElement numOfBedsDropdown;
+
+    @FindBy(xpath = "//div[@class='dropdownContent mortar-wrapper']//ul[@class='minBedOptions active']//li")
+    public List<WebElement> numOfBedsOptions;
 
     @FindBy(xpath = "//div[@class='dropdownContent mortar-wrapper']//ul[@class='minBedOptions active']//li[1]")
     public WebElement noMinBedsOption;
@@ -28,11 +36,17 @@ public class SearchResultsPage extends BasePage {
     @FindBy(id = "typeSelect")
     public WebElement typeDropdown;
 
+    @FindBy(xpath = "//div[@class='drop-down-container mortar-wrapper active']//div[@data-path]")
+    public List<WebElement> typeOptions;
+
     @FindBy(xpath = "//div[@class='drop-down-container mortar-wrapper active']//div[@data-value='1']/a")
     public WebElement typeOptionApartments;
 
     @FindBy(id = "lifestyleControl")
     public WebElement lifestyleDropdown;
+
+    @FindBy(xpath = "//fieldset[@class='drop-down-container active']//span[@class='radioGroup']//span//input[@type='radio']")
+    public List<WebElement> lifestyleOptions;
 
     @FindBy(xpath = "//*[@id='lifestyleControl']/fieldset/span/span[1]/a")
     public WebElement lifestyleOptionStudent;
@@ -61,6 +75,12 @@ public class SearchResultsPage extends BasePage {
     @FindBy(id = "Specialties_128")
     public WebElement cheapAffordability;
 
+    @FindBy(id = "Specialties_64")
+    public WebElement luxuryAffordability;
+
+    @FindBy(id = "Rating_16")
+    public WebElement fiveStarRatings;
+
     @FindBy(xpath = "//*[@id='advancedFilters']/section/button[2]")
     public WebElement doneButton;
 
@@ -82,11 +102,26 @@ public class SearchResultsPage extends BasePage {
     @FindBy(xpath = "//div[@id='noFavoritesYetModal']/div/div/h3")
     public WebElement noFavoritesModalText;
 
-    @FindBy(xpath = "//*[@id='placardContainer']/ul/li[2]/article/section/div/div[2]/div/div[1]/a/p[1]/span")
-    public WebElement secondPropertyTitle;
+    @FindBy(xpath = "//*[@id='placardContainer']/ul/li[1]/article/header/div[1]/a/div[1]/span")
+    public WebElement PropertyTitle;
+
+    @FindBy(xpath = "//div[@class='property-information']/a")
+    public WebElement propertyLinks;
+
+    @FindBy(id = "notificationsFavoritesCount")
+    public WebElement favoritesCountHeader;
+
 
     public SearchResultsPage() {
         PageFactory.initElements(driver, this);
+    }
+
+    public void selectOptions(List<WebElement> elements, int typeIndex) {
+        try {
+            safeClickOnElement(elements.get(typeIndex));
+        } catch (IndexOutOfBoundsException e) {
+            safeClickOnElement(elements.get(elements.size() - 1));
+        }
     }
 
     public void clickOnPriceDropdown() {
@@ -118,11 +153,34 @@ public class SearchResultsPage extends BasePage {
     }
 
     public String getPropertyTitleText() {
-        return getTrimmedElementText(secondPropertyTitle);
+        return getTrimmedElementText(PropertyTitle);
     }
 
-    public void clickToAddFavorites(WebElement element) {
+    public void clickToAddAsFavorite(WebElement element) {
         safeClickOnElement(element);
+    }
+
+    public void clickOnFavoritesCountButton() {
+        safeClickOnElement(favoritesCountHeader);
+    }
+
+    public void checkAddTwoFavorites() {
+        clickToAddAsFavorite(favoritesButton1);
+        clickToAddAsFavorite(favoritesButton2);
+        jsScrollDownUntilElementIsVisible(favoritesCountHeader);
+        clickOnFavoritesCountButton();
+    }
+
+    public void removeOneFavorite() {
+        clickToAddAsFavorite(favoritesButton1);
+        clickToAddAsFavorite(favoritesButton2);
+        jsScrollDownUntilElementIsVisible(favoritesCountHeader);
+        clickOnFavoritesCountButton();
+        safeClickOnElement(favoritesButton2);
+    }
+
+    public String getCountOfFavoritesText() {
+        return getTrimmedElementText(favoritesCountHeader);
     }
 
     public void doNarrowSearch() {
@@ -139,8 +197,9 @@ public class SearchResultsPage extends BasePage {
         clickOnSelectorOptions(moveInDateSelection);
         clickOnSelectors(moreDropdown);
         clickOnSelectorOptions(anyBathsOption);
-        jsScrollDownUntilElementIsVisible(cheapAffordability);
-        clickOnSelectorOptions(cheapAffordability);
+        jsScrollDownUntilElementIsVisible(luxuryAffordability);
+        clickOnSelectorOptions(luxuryAffordability);
+        clickOnSelectorOptions(fiveStarRatings);
         clickOnDoneButton();
     }
 
