@@ -24,4 +24,10 @@ public class DataProviders extends BasePage {
     public Object[][] getOneFavorite() {
         return excel.readStringArrays("OneFavorite");
     }
+
+    @DataProvider(name = "testReviewDP")
+    public Object[][] getReview() {
+        return excel.readStringArrays("WriteAReview");
+    }
+
 }
