@@ -70,7 +70,7 @@ public class SportsLeaguePage extends SharedStepsUI {
     }
 
     public void clickOnWweTitleHistoryArticle() {
-        jsScrollDownUntilElementIsVisible(wweTitleHistoryArticleLink);
+        jsScrollUntilElementIsVisible(wweTitleHistoryArticleLink);
         safeClickOnElement(wweTitleHistoryArticleLink);
     }
 
@@ -95,13 +95,13 @@ public class SportsLeaguePage extends SharedStepsUI {
     }
 
     public String getNumberOneFighterText() {
-        jsScrollDownUntilElementIsVisible(numberOneFighter);
+        jsScrollUntilElementIsVisible(numberOneFighter);
         return getTrimmedElementText(numberOneFighter);
     }
 
     public AthletePage clickOnLewisHamilton() {
         clickOnDriversButton();
-        jsScrollDownUntilElementIsVisible(lewisHamiltonLink);
+        jsScrollUntilElementIsVisible(lewisHamiltonLink);
         safeClickOnElement(lewisHamiltonLink);
 
         return new AthletePage();
