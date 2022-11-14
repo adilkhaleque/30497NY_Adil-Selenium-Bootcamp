@@ -268,6 +268,7 @@ public class BasePage {
     }
 
     public void jsScrollUntilElementIsVisible(WebElement element) {
+        jsDriver = (JavascriptExecutor) (driver);
         jsDriver.executeScript("arguments[0].scrollIntoView();", element);
     }
 
