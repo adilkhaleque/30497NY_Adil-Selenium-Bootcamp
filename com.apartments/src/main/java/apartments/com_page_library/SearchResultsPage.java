@@ -117,8 +117,8 @@ public class SearchResultsPage extends BasePage {
     @FindBy(xpath = "//*[@id='searchResultSortMenu']/ul/li[3]")
     public WebElement rentSortOption;
 
-    @FindBy(xpath = "//*[@id='placardContainer']/ul/li[3]/article/section/div/div[2]/div/div/a")
-    public WebElement thirdProperty;
+    @FindBy(xpath = "//*[@id='placardContainer']/ul/li[7]/article/header/div[1]/a")
+    public WebElement seventhProperty;
 
 
     public SearchResultsPage() {
@@ -188,8 +188,8 @@ public class SearchResultsPage extends BasePage {
     public PropertyPage clickOnProperty() {
         clickOnSortButton();
         clickOnRentSortOption();
-        hoverOverElement(thirdProperty);
-        safeClickOnElement(thirdProperty);
+        jsScrollUntilElementIsVisible(seventhProperty);
+        safeClickOnElement(seventhProperty);
 
         return new PropertyPage();
     }
