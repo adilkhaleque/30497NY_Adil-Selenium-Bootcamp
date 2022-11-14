@@ -197,14 +197,14 @@ public class SearchResultsPage extends BasePage {
     public void checkAddTwoFavorites() {
         clickToAddAsFavorite(favoritesButton1);
         clickToAddAsFavorite(favoritesButton2);
-        jsScrollDownUntilElementIsVisible(favoritesCountHeader);
+        jsScrollUntilElementIsVisible(favoritesCountHeader);
         clickOnFavoritesCountButton();
     }
 
     public void removeOneFavorite() {
         clickToAddAsFavorite(favoritesButton1);
         clickToAddAsFavorite(favoritesButton2);
-        jsScrollDownUntilElementIsVisible(favoritesCountHeader);
+        jsScrollUntilElementIsVisible(favoritesCountHeader);
         clickOnFavoritesCountButton();
         safeClickOnElement(favoritesButton2);
     }
@@ -224,7 +224,7 @@ public class SearchResultsPage extends BasePage {
         clickOnSelectorOptions(moveInDateSelection);
         clickOnSelectors(moreDropdown);
         clickOnSelectorOptions(anyBathsOption);
-        jsScrollDownUntilElementIsVisible(luxuryAffordability);
+        jsScrollUntilElementIsVisible(luxuryAffordability);
         clickOnSelectorOptions(luxuryAffordability);
         clickOnSelectorOptions(fiveStarRatings);
         clickOnDoneButton();
