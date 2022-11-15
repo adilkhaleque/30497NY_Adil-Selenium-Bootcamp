@@ -30,4 +30,9 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("WriteAReview");
     }
 
+    @DataProvider(name = "testRentCalculatorDP")
+    public Object[][] getRentalInformation() {
+        return excel.readStringArrays("RentCalculator");
+    }
+
 }

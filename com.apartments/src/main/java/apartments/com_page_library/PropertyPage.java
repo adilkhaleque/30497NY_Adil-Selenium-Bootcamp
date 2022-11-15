@@ -31,7 +31,7 @@ public class PropertyPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public String getPropertyName() {
+    public String getPropertyNameText() {
         return getTrimmedElementText(propertyName);
     }
 

@@ -120,6 +120,9 @@ public class SearchResultsPage extends BasePage {
     @FindBy(xpath = "//*[@id='placardContainer']/ul/li[7]/article/header/div[1]/a")
     public WebElement seventhProperty;
 
+    @FindBy(xpath = "//div[@id='placardContainer']/ul/li[1]/article/header/div[1]/a")
+    public WebElement wallStreetProperty;
+
 
     public SearchResultsPage() {
         PageFactory.initElements(driver, this);
@@ -183,6 +186,12 @@ public class SearchResultsPage extends BasePage {
 
     public void clickOnRentSortOption() {
         safeClickOnElement(rentSortOption);
+    }
+
+    public PropertyPage clickOnWallStreetProperty() {
+        safeClickOnElement(wallStreetProperty);
+
+        return new PropertyPage();
     }
 
     public PropertyPage clickOnProperty() {

@@ -13,7 +13,8 @@
         <classes>
 <!--            <class name="system.searching.TestSearching"/>-->
 <!--            <class name="system.add_favorites.TestFavorites"/>-->
-            <class name="system.reviews.TestWriteReview"/>
+<!--            <class name="system.reviews.TestWriteReview"/>-->
+            <class name="system.renter_tools.TestRentCalculator"/>
         </classes>
     </test>
 
