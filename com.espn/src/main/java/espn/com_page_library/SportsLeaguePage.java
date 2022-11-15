@@ -3,6 +3,7 @@ package espn.com_page_library;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import shared.SharedStepsUI;
 
 public class SportsLeaguePage extends SharedStepsUI {
@@ -71,7 +72,8 @@ public class SportsLeaguePage extends SharedStepsUI {
 
     public void clickOnWweTitleHistoryArticle() {
         jsScrollUntilElementIsVisible(wweTitleHistoryArticleLink);
-        safeClickOnElement(wweTitleHistoryArticleLink);
+        hoverOverElement(wweTitleHistoryArticleLink);
+        jsClickOnElement(wweTitleHistoryArticleLink);
     }
 
     public String getBrockLesnarText() {
@@ -105,6 +107,12 @@ public class SportsLeaguePage extends SharedStepsUI {
         safeClickOnElement(lewisHamiltonLink);
 
         return new AthletePage();
+    }
+
+    public void goToWorldCupFixtures() {
+        clickOnFixturesButton();
+        clickOnWorldCupDate();
+        webDriverWait.until(ExpectedConditions.visibilityOf(dateHeading));
     }
 
     public void getNhlScores() {

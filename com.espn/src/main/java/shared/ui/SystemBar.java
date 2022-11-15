@@ -7,6 +7,7 @@ import espn.com_page_library.TeamPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class SystemBar extends BasePage {
 
     @FindBy (xpath = "//*[@id='global-nav']/ul/li[4]/div/ul[2]/li/div/ul[5]/li[4]/a")
     public WebElement lakersButton;
+
     @FindBy (xpath = "//li[@class='sports menu-mlb']/a[@href]")
     public WebElement mlbButton;
 
@@ -59,7 +61,7 @@ public class SystemBar extends BasePage {
     @FindBy (id = "global-search-input")
     public WebElement searchField;
 
-    @FindBy (className = "btn-search")
+    @FindBy (xpath = "//*[@id='global-search']/div/input[2]")
     public WebElement secondSearchButton;
 
     @FindBy (xpath = "//li[@class='user']/a[@href]")
@@ -189,6 +191,7 @@ public class SystemBar extends BasePage {
     public SearchResultsPage doSearch(String searchTerm) {
         clickOnSearchButton();
         inputSearchTerm(searchTerm);
+        hoverOverElement(secondSearchButton);
         clickOnSecondSearchButton();
 
         return new SearchResultsPage();

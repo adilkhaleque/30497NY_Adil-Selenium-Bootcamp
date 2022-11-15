@@ -27,9 +27,7 @@ public class TestSchedule extends BasePage {
 
         SportsLeaguePage sportsLeaguePage = homePage.systemBar.clickOnWorldCupButton();
 
-        sportsLeaguePage.clickOnFixturesButton();
-
-        sportsLeaguePage.clickOnWorldCupDate();
+        sportsLeaguePage.goToWorldCupFixtures();
 
         Assert.assertEquals(sportsLeaguePage.getWorldCupDateHeadingText(), expected);
     }
