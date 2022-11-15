@@ -103,7 +103,7 @@ public class SearchResultsPage extends BasePage {
     public WebElement noFavoritesModalText;
 
     @FindBy(xpath = "//*[@id='placardContainer']/ul/li[1]/article/header/div[1]/a/div[1]/span")
-    public WebElement PropertyTitle;
+    public WebElement propertyTitle;
 
     @FindBy(xpath = "//div[@class='property-information']/a")
     public WebElement propertyLinks;
@@ -165,7 +165,7 @@ public class SearchResultsPage extends BasePage {
     }
 
     public String getPropertyTitleText() {
-        return getTrimmedElementText(PropertyTitle);
+        return getTrimmedElementText(propertyTitle);
     }
 
     public void clickToAddAsFavorite(WebElement element) {
