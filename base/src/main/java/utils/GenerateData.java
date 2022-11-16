@@ -52,6 +52,10 @@ public class GenerateData {
         return faker.phoneNumber().cellPhone().replace('.', '-');
     }
 
+    public String ssn() {
+        return faker.numerify("#########");
+    }
+
     public static String password() {
         return faker.bothify("!??##?$#?##?##??#");
 
